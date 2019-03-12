@@ -19,5 +19,13 @@
 |[DeleteHighPriorityIp](cn.zh-CN/API参考/添加IP/DeleteHighPriorityIp.md#)|删除指定实例的HighPriorityIp地址列表信息。|
 |[DescribeHighPriorityIp](cn.zh-CN/API参考/添加IP/DescribeHighPriorityIp.md#)|查询指定实例的IP地址或域名列表。|
 |[AddUisNodeIp](cn.zh-CN/API参考/添加IP/AddUisNodeIp.md#)|为UisNode增加IP。|
-|[CreateDnatEntry](cn.zh-CN/API参考/上车点实例/CreateDnatEntry.md#)|在指定的UIS Node上配置DNAT规则。|
+|[DeleteUisNodeIp](cn.zh-CN/API参考/添加IP/DeleteUisNodeIp.md#)|删除UIS节点上的IP。|
+|[DescribeAreas](cn.zh-CN/API参考/上车点实例/DescribeAreas.md#)|查看UIS节点支持的地域信息。|
+|[CreateDnatEntry](cn.zh-CN/API参考/DNAT规则/CreateDnatEntry.md#)|在指定的UIS Node上配置DNAT规则。|
+|[DeleteDnatEntry](cn.zh-CN/API参考/DNAT规则/DeleteDnatEntry.md#)|删除DNAT规则。|
+|[DescribeDnatEntries](cn.zh-CN/API参考/DNAT规则/DescribeDnatEntries.md#)|查询已创建的DNAT规则。|
+|[ModifyDnatEntry](cn.zh-CN/API参考/DNAT规则/ModifyDnatEntry.md#)|修改DNAT规则。|
+|[CreateUisNetworkInterface](cn.zh-CN/API参考/弹性网卡/CreateUisNetworkInterface.md#)|创建弹性网卡，并将已创建的弹性网卡绑定到UIS服务。|
+|[DescribeUisNetworkInterfaces](cn.zh-CN/API参考/弹性网卡/DescribeUisNetworkInterfaces.md#)|查询已创建的弹性网卡。|
+|[DeleteUisNetworkInterface](cn.zh-CN/API参考/弹性网卡/DeleteUisNetworkInterface.md#)|将弹性网卡从UIS服务中解绑，并删除该弹性网卡。|
 
