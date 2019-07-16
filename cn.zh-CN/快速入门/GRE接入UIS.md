@@ -10,7 +10,7 @@
 
 本文以ECS实例（Ubuntu系统）搭建GRE网关为例，介绍私网IP 192.168.0.xx如何通过GRE网关接入阿里云UIS，访问公网47.254.87.xx。
 
-![GRE接入UIS](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/908822/156328260751590_zh-CN.png)
+![GRE接入UIS](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/908822/156329025551590_zh-CN.png)
 
 1.  执行以下命令在ECS实例上搭建GRE网关。 
 
