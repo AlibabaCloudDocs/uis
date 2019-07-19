@@ -1,118 +1,156 @@
-# DescribeUisConnections {#reference_ems_nyw_pfb .reference}
+# DescribeUisConnections {#doc_api_Uis_DescribeUisConnections .reference}
 
-查看已创建的隧道连接信息。
+调用DescribeUisConnections接口查看已创建的隧道连接信息。
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|Action|String|是| 要执行的操作。 取值：
+## 调试 {#apiExplorer .section}
 
- DescribeUisConnections
+前往【[API Explorer](https://api.aliyun.com/#product=Uis&api=DescribeUisConnections)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
- |
-|UisConnectionId|String|是| 要查看的隧道连接ID。
+## 请求参数 {#parameters .section}
 
- |
-|UisNodeId|String|是| 要查询的节点实例ID。
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DescribeUisConnections|要执行的操作。 取值：**DescribeUisConnections**。
 
  |
-|PageNumber|Integer|否| 列表的页码，默认值为1。
+|PageNumber|Integer|否|1|列表的页码，默认值为**1**。
 
  |
-|PageSize|Integer|否| 分页查询时每页的行数，最大值为50，默认值为10。
+|PageSize|Integer|否|10|分页查询时每页的行数，最大值为**50**，默认值为**10**。
+
+ |
+|RegionId|String|否|cn-hangzhou|地域ID。
+
+ |
+|UisConnectionId|String|否|UISCONN-xxxblu51boe75a1eb\*\*\*\*|要查看的隧道连接ID。
+
+ |
+|UisNodeId|String|否|UISNODE-xxxcp0zr5m2avmn2r\*\*\*\*|要查询的节点实例ID。
 
  |
 
-## 返回参数 {#section_ugs_f1g_cz .section}
+## 返回数据 {#resultMapping .section}
 
-|名称|类型|描述|
-|:-|:-|:-|
-|RequestId|String|请求ID。|
-|TotalCount|String|列表条目数。|
-|PageNumber|Integer|当前页码。|
-|PageSize|String|每页包含多少条目。|
-|UisConnections|JSON String|隧道连接列表的详细信息。|
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|PageNumber|Integer|1|当前页码。
 
-|名称|类型|描述|
-|:-|:-|:-|
-|UisId|String|实例的ID。|
-|UisNodeId|String|节点实例的名称。|
-|UisConnectionId|String|隧道连接的ID。|
-|UisProtocol|String|传入软件端与服务端使用的协议。|
-|SslConfig|String|SSL （OpenVPN）的配置信息。|
-|Name|String|隧道连接的名称。|
-|Description|String|隧道连接的描述。|
-|Status|Long|隧道连接的状态：-   init：初始化
--   configuring：配置中
--   deleted：已删除
+ |
+|PageSize|Integer|10|每页包含多少条目。
 
-|
+ |
+|RequestId|String|485997B0-3EB4-40B7-82D8-4A404EBFDB20|请求ID。
 
-|名称|类型|描述|
-|:-|:-|:-|
-|port|String|SSL-VPN服务端所使用的端口。|
-|Proto|String|SSL-VPN服务端所使用的协议。|
-|Cipher|String|使用的加密算法。|
+ |
+|TotalCount|Integer|1|列表条目数。
 
-## 示例 {#section_ix5_h1g_cz .section}
+ |
+|UisConnections| | |隧道连接列表的详细信息。
 
-**请求示例**
+ |
+|Description|String|connection description info|隧道连接的描述。
 
-``` {#createVPCpub}
-https://uis.cn-hangzhou.aliyuncs.com/?Action=DescribeUisConnections
-&UisNodeId=UISNODE-xxxcp0zr5m2avmn2rw2p7
-&UisConnectionId=UISCONN-xxxblu51boe75a1ebj2y4
-&Description=conn_desc
-&Name=test_conn
-&RegionId=cn-hangzhou
-&公共请求参数
+ |
+|GreConfig|String|\[\{'localIp':'47.95.197.XX','localTunnelIp':'10.0.0.X','customerIp':'39.106.5.XX','customerTunnelIp':'10.0.0.X','customerSubnet':'192.168.X.X/24'\},\{'localIp':'47.94.219.XX','localTunnelIp':'10.0.0.X','customerIp':'39.106.5.XX','customerTunnelIp':'10.0.0.X','customerSubnet':'192.168.X.X/24'\}\]|在创建UIS Connection时，Protocol参数的值指定为**GRE**。
+
+ GreConfig参数为结构体数组转成的JSON String，可以通过LocalIP来为每个UisNode的IP配置不同的GRE tunnel。
+
+ 结构体中的参数包含：
+
+ -   **LocalIP**：UisNode的IP
+-   **LocalTunnelIP**：UisNode的GRE Tunnel设备的IP
+-   **CustomerIP**：客户的公网IP
+-   **CustomerTunnelIP**：客户的GRE Tunnel设备的IP
+-   **CustomerSubnet**：客户GRE的私网网段
+
+ |
+|Name|String|test\_conn|隧道连接的名称。
+
+ |
+|SslConfig|String|\{\\"cipher\\":\\"AES-128-CBC\\",\\"port\\":1194,\\"protocol\\":\\"udp\\"\}|SSL （OpenVPN）的配置信息。
+
+ |
+|State|String|running|隧道连接的状态：
+
+ -   **init**：初始化
+-   **configuring**：配置中
+-   **deleted**：已删除
+
+ |
+|UisConnectionId|String|UISCONN-xxxblu51boe75a1eb\*\*\*\*|隧道连接的ID。
+
+ |
+|UisId|String|UIS-xxxbtfk761c670ok9\*\*\*\*|实例的ID。
+
+ |
+|UisNodeId|String|UISNODE-xxxcp0zr5m2avmn2r\*\*\*\*|节点实例的名称。
+
+ |
+|UisProtocol|String|SSLVPN|传入软件端与服务端使用的协议。
+
+ |
+
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
+http(s)://[uis.cn-hangzhou.aliyuncs.com/?Action=DescribeUisConnections
+&<公共请求参数>
+
 ```
 
-**返回示例**
+正常返回示例
 
--   XML格式
+`XML` 格式
 
-    ```
-    <DescribeUisConnectionsResponse>
-        <PageNumber>1</PageNumber>
-        <TotalCount>1</TotalCount>
-        <PageSize>10</PageSize>
-        <RequestId>485997B0-3EB4-40B7-82D8-4A404EBFDB20</RequestId>
-        <UisConnections>
-            <UisConnection>
-                <Name>test_conn</Name>
-                <UisConnectionId>UISCONN-xxxblu51boe75a1ebj2y4</UisConnectionId>
-                <UisNodeId>UISNODE-xxxcp0zr5m2avmn2rw2p7</UisNodeId>
-                <SslConfig>{\"cipher\":\"AES-128-CBC\",\"port\":1194,\"protocol\":\"udp\"}</SslConfig>
-                <State>running</State>
-                <UisProtocol>SSLVPN</UisProtocol>
-                <UisId>UIS-xxxbtfk761c670ok94w1u</UisId>
-                <GreConfig>null</GreConfig>
-            </UisConnection>
-        </UisConnections>
-    </DescribeUisConnectionsResponse>
-    ```
+``` {#xml_return_success_demo}
+<DescribeUisConnectionsResponse>
+  <PageNumber>1</PageNumber>
+  <TotalCount>1</TotalCount>
+  <PageSize>10</PageSize>
+  <RequestId>485997B0-3EB4-40B7-82D8-4A404EBFDB20</RequestId>
+  <UisConnections>
+    <UisConnection>
+      <Name>test_conn</Name>
+      <UisConnectionId>UISCONN-xxxblu51boe75a1eb****</UisConnectionId>
+      <UisNodeId>UISNODE-xxxcp0zr5m2avmn2r****</UisNodeId>
+      <SslConfig>{\"cipher\":\"AES-128-CBC\",\"port\":1194,\"protocol\":\"udp\"}</SslConfig>
+      <State>running</State>
+      <UisProtocol>SSLVPN</UisProtocol>
+      <UisId>UIS-xxxbtfk761c670ok9****</UisId>
+      <GreConfig>null</GreConfig>
+    </UisConnection>
+  </UisConnections>
+</DescribeUisConnectionsResponse>
 
--   JSON格式
+```
 
-    ```
-    {
-        "pageNumber": 1, 
-        "pageSize": 10, 
-        "requestId": "485997B0-3EB4-40B7-82D8-4A404EBFDB20", 
-        "totalCount": 1, 
-        "uisConnections": [
-            {
-                "greConfig": "null", 
-                "name": "test_conn", 
-                "sslConfig": "{\"cipher\":\"AES-128-CBC\",\"port\":1194,\"protocol\":\"udp\"}", 
-                "state": "running", 
-                "uisConnectionId": "UISCONN-xxxblu51boe75a1ebj2y4", 
-                "uisId": "UIS-xxxbtfk761c670ok94w1u", 
-                "uisNodeId": "UISNODE-xxxcp0zr5m2avmn2rw2p7", 
-                "uisProtocol": "SSLVPN"
-            }
-        ]
-    }
-    ```
+`JSON` 格式
 
+``` {#json_return_success_demo}
+{
+	"uisConnections":[
+		{
+			"uisProtocol":"SSLVPN",
+			"greConfig":"null",
+			"name":"test_conn",
+			"uisNodeId":"UISNODE-xxxcp0zr5m2avmn2r****",
+			"state":"running",
+			"uisConnectionId":"UISCONN-xxxblu51boe75a1eb****",
+			"uisId":"UIS-xxxbtfk761c670ok9****",
+			"sslConfig":"{\"cipher\":\"AES-128-CBC\",\"port\":1194,\"protocol\":\"udp\"}"
+		}
+	],
+	"totalCount":1,
+	"requestId":"485997B0-3EB4-40B7-82D8-4A404EBFDB20",
+	"pageSize":10,
+	"pageNumber":1
+}
+```
+
+## 错误码 { .section}
+
+访问[错误中心](https://error-center.aliyun.com/status/product/Uis)查看更多错误码。
 
