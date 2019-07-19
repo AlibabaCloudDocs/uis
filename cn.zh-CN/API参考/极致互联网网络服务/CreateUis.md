@@ -1,72 +1,147 @@
-# CreateUis {#reference_i4w_xmt_ndb .reference}
+# CreateUis {#doc_api_Uis_CreateUis .reference}
 
-创建一个实例。实例创建后会指定隧道协议并生成VPN数据库的管理口令。
+调用CreateUis接口创建一个Uis实例。实例创建后会指定隧道协议，并生成VPN数据库的管理口令。
 
-## 请求参数 {#section_cch_pjg_mdb .section}
+## 调试 {#apiExplorer .section}
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|Action|String|是| 要执行的操作。 取值：
+前往【[API Explorer](https://api.aliyun.com/#product=Uis&api=CreateUis)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
- CreateUis
+## 请求参数 {#parameters .section}
 
- |
-|RegionId|String|否| 实例的地域。默认值是cn-hangzhou。
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|AccessType|String|是|GRE|接入类型，与UisProtocol有对应关系。
 
- |
-|Name|String|否| 实例的名称。
-
- 长度为 2-128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-）。但不能以`http://` 或`https://`开头。
+ -   接入**VPN**类型，对应的UisProtocol为**SSL、SDK**。
+-   接入**IOT**类型，对应的UisProtocol为**GRE**。
 
  |
-|Description|String|否| 实例的描述信息。
+|Action|String|是|CreateUis|要执行的操作。 取值：
 
- 长度为 2-256个字符，必须以字母或中文开头，但不能以`http://` 或`https://`开头。
+ **CreateUis**。
 
  |
-|ClientToken|String|否| 客户端token，用于保证请求的幂等性。
+|ServiceRegion|String|是|China-mainland|UIS实例服务的区域。
+
+ 取值：**中国大陆\(China-mainland\)**/**海外\(Overseas\)**/**全球\(Global\)**。
+
+ |
+|AutoPay|Boolean|否|true|是否支持自动支付。默认值是**false**。
+
+ |
+|Bandwidth|Integer|否|10|指定UIS实例的带宽，单位为M。
+
+ |
+|BandwidthType|String|否|BGP|带宽类型。取值：
+
+ -   **BGP**
+-   **ChinaTelecom**
+-   **ChinaUnicom**
+-   **ChinaMobile**
+-   **BGP+CEN**
+-   **ChinaTelecom+CEN**
+-   **ChinaUnicom+CEN**
+-   **ChinaMobile+CEN**
+
+ |
+|ClientToken|String|否|d7d24a21-f4ba-4454-9173-b3828dae492b|客户端token，用于保证请求的幂等性。
 
  由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个 ASCII 字符。
 
  |
+|ConnectionBandwidth|Integer|否|20|指定每个连接的带宽。
 
-## 返回参数 {#section_ugs_f1g_cz .section}
+ |
+|ConnectionCount|Integer|否|500|指定连接的数量。
 
-|名称|类型|描述|
-|:-|:-|:-|
-|RequestId|String|请求ID。|
-|UisId|String|实例的ID。|
+ |
+|Description|String|否|uis description info|实例的描述信息。
 
-## 示例 {#section_ix5_h1g_cz .section}
+ 长度为 2-256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
 
-**请求示例**
+ |
+|Duration|Integer|否|1|预付费时，购买的周期数。
 
-``` {#createVPCpub}
-https://uis.cn-hangzhou.aliyuncs.com/?Action=CreateUis
-&RegionId=cn-hangzhou
-&Name=test_uis
-&公共请求参数
+ |
+|InstanceChargeType|String|否|PREPAY|付费方式。取值：**后付费\(POSTPAY\)**/**预付费\(PREPAY\)**。
+
+ |
+|InternetChargeType|String|否|Connection|计费方式。取值：**连接\(Connection\)**/**带宽\(Bandwidth\)**。
+
+ |
+|Name|String|否|test\_uis\_name|实例的名称。
+
+ 长度为 2-128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-）。但不能以`http://`或`https://`开头。
+
+ |
+|PricingCycle|String|否|Year|预付费购买的周期数类型。取值：**Month**/**Year**。
+
+ |
+|RegionId|String|否|cn-hangzhou|实例的地域。
+
+ **说明：** 目前仅支持cn-hangzhou。
+
+ |
+|UisProtocol|String|否|GRE|用户的连接类型。取值：**SSL**/**SDK**/**GRE**。
+
+ |
+
+## 返回数据 {#resultMapping .section}
+
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|OrderId|String|2040684504905xx|生成的订单ID。
+
+ |
+|RequestId|String|0ED8D006-F706-4D23-88ED-E11ED28DCAC0|请求ID。
+
+ |
+|UisId|String|UIS-xxxk7k971za1h6gxk\*\*\*\*|实例的ID。
+
+ |
+
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
+http(s)://uis.cn-hangzhou.aliyuncs.com/?Action=CreateUis
+&AccessType=GRE
+&ServiceRegion=China-mainland
+&<公共请求参数>
+
 ```
 
-**返回示例**
+正常返回示例
 
--   XML格式
+`XML` 格式
 
-    ```
-    <?xml version="1.0" encoding="UTF-8"?>
-    <CreateUisResponse>
-        <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
-        <uisId>UIS-xxxk7k971za1h6gxkli5n</uisId>
-    </CreateUisResponse>
-    ```
+``` {#xml_return_success_demo}
+<CreateUisResponse>
+  <OrderId>2040684504905xx</OrderId>
+  <RequestId>5C23D304-F0F9-4581-88B0-6E2123B23AC1</RequestId>
+  <UisId>UIS-xxxe61q5i00921m3w****</UisId>
+</CreateUisResponse>
 
--   JSON格式
+```
 
-    ```
-    { 
-        "RequestId": "0ED8D006-F706-4D23-88ED-E11ED28DCAC0", 
-        "uisId":"UIS-xxxk7k971za1h6gxkli5n"
-    }
-    ```
+`JSON` 格式
 
+``` {#json_return_success_demo}
+{
+	"RequestId":"5C23D304-F0F9-4581-88B0-6E2123B23AC1",
+	"OrderId":"2040684504905xx",
+	"UisId":"UIS-xxxe61q5i00921m3w****"
+}
+```
+
+## 错误码 { .section}
+
+|HttpCode|错误码|错误信息|描述|
+|--------|---|----|--|
+|403|Forbbiden.SubUser|You are not authorized to operate on the specified resource because your account was created by another user.|由于账号是其他用户创建的，并未授权访问指定资源。|
+|403|Forbidden|The user is not authorized to operate on the specified resource.|用户并未授权操作指定资源。|
+
+访问[错误中心](https://error-center.aliyun.com/status/product/Uis)查看更多错误码。
 
