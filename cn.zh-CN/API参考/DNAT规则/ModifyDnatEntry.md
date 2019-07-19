@@ -1,62 +1,92 @@
-# ModifyDnatEntry {#reference_opz_232_bhb .reference}
+# ModifyDnatEntry {#doc_api_Uis_ModifyDnatEntry .reference}
 
 调用ModifyDnatEntry接口修改DNAT规则。
 
-## 请求参数 {#section_cch_pjg_mdb .section}
+## 调试 {#apiExplorer .section}
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|Action|String|是| 要执行的操作。 取值：
+前往【[API Explorer](https://api.aliyun.com/#product=Uis&api=ModifyDnatEntry)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
- ModifyDnatEntry
+## 请求参数 {#parameters .section}
 
- |
-|UisNodeId|String|是|UIS节点ID。|
-|RegionId|String|否|UIS实例所属的地域ID。|
-|UisDnatId|String|否|DNAT规则ID。|
-|DestinationIp|String|否| DNAT转换后的目标IP地址。
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|UisNodeId|String|是|UISNODE-xxxi9zyyd8seh8udp\*\*\*\*|UIS节点ID。
 
  |
-|DestinationPort|Integer|否| DNAT转换后的目标端口。
-
- -1代表所有端口。
+|Action|String|否|ModifyDnatEntry|要执行的操作。 取值：**ModifyDnatEntry**。
 
  |
-|IpProtocol|String|否| 指定DNAT的协议，支持tcp、udp、icmp、any。当协议为any时，指定端口无效。
+|DestinationIp|String|否|3.3.3.X|DNAT转换后的目标IP地址。
 
  |
-|Name|String|否|DNAT规则的名称。|
-|OriginalIp|String|否|要转换的源IP地址。|
-|OriginalPort|String|否|要转换的源端口。-1代表所有端口。
+|DestinationPort|Integer|否|8080|DNAT转换后的目标端口。-1代表所有端口。
 
-|
+ |
+|IpProtocol|String|否|tcp|指定DNAT的协议，支持tcp、udp、icmp、any。当协议为any时，指定端口无效。
 
-## 返回参数 {#section_ugs_f1g_cz .section}
+ |
+|Name|String|否|TestModifyDnat|DNAT规则的名称。
 
-|名称|类型|描述|
-|:-|:-|:-|
-|RequestId|String|请求ID。|
+ |
+|OriginalIp|String|否|2.2.2.X|要转换的源IP地址。
 
-## 请求示例 {#section_l4x_lr3_ygb .section}
+ |
+|OriginalPort|Integer|否|80|要转换的源端口。-1代表所有端口。
 
-```
-http(s)://uis.cn-hangzhou.aliyuncs.com/?Action=ModifyDnatEntry
-&DestinationIp=3.3.3.3
-&DestinationPort=8080
-&IpProtocol=tcp
-&Name=dnatEntry1
-&OriginalIp=2.2.2.2
-&OriginalPort=80
-&UisNodeId=UISNODE-xxxpucurxxx
+ |
+|RegionId|String|否|cn-hangzhou|UIS实例所属的地域ID。
+
+ |
+|UisDnatId|String|否|UISDNAT-xxxs1yb3gtpxrfbbz\*\*\*\*|DNAT规则ID。
+
+ |
+
+## 返回数据 {#resultMapping .section}
+
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|AFCE5064-FD94-44E1-AD9E-BE1E23765CE6|请求ID。
+
+ |
+
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
+http(s)://[Endpoint]/?Action=ModifyDnatEntry
+&UisNodeId=UISNODE-xxxi9zyyd8seh8udp****
 &<公共请求参数>
-```
-
-## 返回示例 {#section_hcz_nr3_ygb .section}
 
 ```
 
+正常返回示例
+
+`XML` 格式
+
+``` {#xml_return_success_demo}
+<ModifyDnatEntryResponse>
+  <RequestId>AFCE5064-FD94-44E1-AD9E-BE1E23765CE6</RequestId>
+</ModifyDnatEntryResponse>
+
+```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
 {
-  "RequestId": "FC6EAEDF-72BC-4028-A622-63320AD1DEEF"
+	"RequestId":"AFCE5064-FD94-44E1-AD9E-BE1E23765CE6"
 }
 ```
+
+## 错误码 { .section}
+
+|HttpCode|错误码|错误信息|描述|
+|--------|---|----|--|
+|400|InvalidUisNodeId.NotFound|The specified UIS node does not exist.|该Uis Node不存在。|
+|400|Uis.Configuring|The specified UIS instance is being configured.|该Uis实例正在配置中。|
+|500|UnknownError|An error occurred while processing your request. Please try again. If the error persists, please submit a ticket.|未知错误。请重试该操作，若再出现该错误请提交工单。|
+
+访问[错误中心](https://error-center.aliyun.com/status/product/Uis)查看更多错误码。
 
