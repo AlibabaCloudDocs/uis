@@ -1,6 +1,6 @@
 # ModifyHighPriorityIp {#doc_api_Uis_ModifyHighPriorityIp .reference}
 
-调用ModifyHighPriorityIp接口修改指定实例的HighPriorityIp地址列表信息。可以用来修改路由的节点信息。
+调用ModifyHighPriorityIp接口修改指定实例的地址列表信息。可以用来修改路由的节点信息。
 
 ## 调试 {#api_explorer .section}
 
@@ -10,7 +10,9 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ModifyHighPriorityIp|要执行的操作。 取值：**ModifyHighPriorityIp**。
+|Action|String|是|ModifyHighPriorityIp|要执行的操作。 取值：
+
+ **ModifyHighPriorityIp**。
 
  |
 |HighPriorityIp|String|是|\[\{'Destination': '221.6.4.XX','AreaID':'cn-shanghai'\},\{'Destination': 'www.microsoft.com'\}\]|目标IP地址或域名，用逗号分隔。格式如下:
@@ -71,7 +73,7 @@ http(s)://[Endpoint]/?Action=ModifyHighPriorityIp
 
 |HttpCode|错误码|错误信息|描述|
 |--------|---|----|--|
-|403|Forbbiden.SubUser|You are not authorized to operate on the specified resource because your account was created by another user.|由于账号是其他用户创建的，并未授权访问指定资源。|
+|403|Forbbiden.SubUser|You are not authorized to operate on the specified resource because your account was created by another user.|由于账号是其他用户创建的，并未授权访问指定资源|
 |403|Forbidden|The user is not authorized to operate on the specified resource.|用户并未授权操作指定资源。|
 
 访问[错误中心](https://error-center.aliyun.com/status/product/Uis)查看更多错误码。
