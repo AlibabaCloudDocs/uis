@@ -14,14 +14,14 @@
 |[DescribeUisConnections](cn.zh-CN/API参考/隧道连接/DescribeUisConnections.md#)|查看已创建的隧道连接信息。|
 |[ModifyUisConnectionAttribute](cn.zh-CN/API参考/隧道连接/ModifyUisConnectionAttribute.md#)|修改隧道连接的配置信息。|
 |[DeleteUisConnection](cn.zh-CN/API参考/隧道连接/DeleteUisConnection.md#)|删除隧道连接。|
-|[AddHighPriorityIp](cn.zh-CN/API参考/添加IP/AddHighPriorityIp.md#)|调用此接口向List中批量添加IP地址或URL。|
-|[ModifyHighPriorityIp](cn.zh-CN/API参考/添加IP/ModifyHighPriorityIp.md#)|修改指定实例的HighPriorityIp地址列表信息。|
-|[DeleteHighPriorityIp](cn.zh-CN/API参考/添加IP/DeleteHighPriorityIp.md#)|删除指定实例的HighPriorityIp地址列表信息。|
-|[DescribeHighPriorityIp](cn.zh-CN/API参考/添加IP/DescribeHighPriorityIp.md#)|查询指定实例的IP地址或域名列表。|
-|[AddUisNodeIp](cn.zh-CN/API参考/添加IP/AddUisNodeIp.md#)|为UisNode增加IP。|
-|[DeleteUisNodeIp](cn.zh-CN/API参考/添加IP/DeleteUisNodeIp.md#)|删除UIS节点上的IP。|
+|[ZH-CN\_TP\_77561.md\#](cn.zh-CN/API参考/添加目标IP/AddHighPriorityIp.md#)|调用此接口向List中批量添加IP地址或URL。|
+|[ZH-CN\_TP\_77562.md\#](cn.zh-CN/API参考/添加目标IP/ModifyHighPriorityIp.md#)|修改指定实例的HighPriorityIp地址列表信息。|
+|[ZH-CN\_TP\_77563.md\#](cn.zh-CN/API参考/添加目标IP/DeleteHighPriorityIp.md#)|删除指定实例的HighPriorityIp地址列表信息。|
+|[ZH-CN\_TP\_77564.md\#](cn.zh-CN/API参考/添加目标IP/DescribeHighPriorityIp.md#)|查询指定实例的IP地址或域名列表。|
+|[ZH-CN\_TP\_134178.md\#](cn.zh-CN/API参考/添加节点IP/AddUisNodeIp.md#)|为UisNode增加IP。|
+|[DeleteUisNodeIp](cn.zh-CN/API参考/添加节点IP/DeleteUisNodeIp.md#)|删除UIS节点上的IP。|
 |[DescribeAreas](cn.zh-CN/API参考/上车点实例/DescribeAreas.md#)|查看UIS节点支持的地域信息。|
-|[CreateDnatEntry](cn.zh-CN/API参考/DNAT规则/CreateDnatEntry.md#)|在指定的UIS Node上配置DNAT规则。|
+|[ZH-CN\_TP\_134179.md\#](cn.zh-CN/API参考/DNAT规则/CreateDnatEntry.md#)|在指定的UIS Node上配置DNAT规则。|
 |[DeleteDnatEntry](cn.zh-CN/API参考/DNAT规则/DeleteDnatEntry.md#)|删除DNAT规则。|
 |[DescribeDnatEntries](cn.zh-CN/API参考/DNAT规则/DescribeDnatEntries.md#)|查询已创建的DNAT规则。|
 |[ModifyDnatEntry](cn.zh-CN/API参考/DNAT规则/ModifyDnatEntry.md#)|修改DNAT规则。|
