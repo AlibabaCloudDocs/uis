@@ -2,9 +2,9 @@
 
 调用ModifyUisAttribute接口修改已创建的实例的配置。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Uis&api=ModifyUisAttribute)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Uis&api=ModifyUisAttribute&type=RPC&version=2018-08-21)
 
 ## 请求参数 {#parameters .section}
 
@@ -65,9 +65,8 @@ https://uis.cn-hangzhou.aliyuncs.com/?Action=ModifyUisAttribute
 
 ``` {#xml_return_success_demo}
 <ModifyUisAttributeResponse>
-  <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
+      <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
 </ModifyUisAttributeResponse>
-
 ```
 
 `JSON` 格式
