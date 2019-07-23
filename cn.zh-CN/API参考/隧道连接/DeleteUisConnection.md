@@ -1,55 +1,71 @@
-# DeleteUisConnection {#reference_edn_hmx_pfb .reference}
+# DeleteUisConnection {#doc_api_Uis_DeleteUisConnection .reference}
 
-删除隧道连接。
+调用DeleteUisConnection接口删除隧道连接。
 
-## 请求参数 {#section_cch_pjg_mdb .section}
+## 调试 {#api_explorer .section}
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|Action|String|是| 要执行的操作。 取值：
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Uis&api=DeleteUisConnection&type=RPC&version=2018-08-21)
 
- DeleteUisConnection
+## 请求参数 {#parameters .section}
+
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DeleteUisConnection|要执行的操作。 取值：**DeleteUisConnection**。
 
  |
-|UisNodeId|String|是| 要查询的节点ID，如果不指定则查询指定实例关联的所有节点。
+|UisConnectionId|String|是|UISCONN-xxxblu51boe75a1eb\*\*\*\*|要删除的隧道连接ID。
 
  |
-|UisNodeAreaId|String|是|隧道连接关联的节点实例的地域ID。|
+|ClientToken|String|否|d7d24a21-f4ba-4454-9173-b3828dae492b|客户端token，用于保证请求的幂等性。
 
-## 返回参数 {#section_ugs_f1g_cz .section}
+ 由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个 ASCII 字符。
 
-|名称|类型|描述|
-|:-|:-|:-|
-|RequestId|String|请求ID。|
+ |
+|UisNodeId|String|否|UISNODE-xxxcp0zr5m2avmn2r\*\*\*\*|节点ID。
 
-## 示例 {#section_ix5_h1g_cz .section}
+ |
 
-**请求示例**
+## 返回数据 {#resultMapping .section}
 
-``` {#createVPCpub}
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|A179AE8A-A7FE-4242-A830-641720CE2785|请求ID。
+
+ |
+
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
 https://uis.cn-hangzhou.aliyuncs.com/?Action=DeleteUisConnection
-&UisNodeId=UISNODE-xxxcp0zr5m2avmn2rw2p7
-&UisConnectionId=UISCONN-xxxblu51boe75a1ebj2y4
+&UisNodeId=UISNODE-xxxcp0zr5m2avmn2r****
+&UisConnectionId=UISCONN-xxxblu51boe75a1eb****
 &RegionId=cn-hangzhou
 &公共请求参数
+
 ```
 
-**返回示例**
+正常返回示例
 
--   XML格式
+`XML` 格式
 
-    ```
-    <DeleteUisConnectionResponse>
-    	<RequestId>A179AE8A-A7FE-4242-A830-641720CE2785</RequestId>
-    </DeleteUisConnectionResponse>
-    ```
+``` {#xml_return_success_demo}
+<DeleteUisConnectionResponse>
+	  <RequestId>A179AE8A-A7FE-4242-A830-641720CE2785</RequestId>
+</DeleteUisConnectionResponse>
+```
 
--   JSON格式
+`JSON` 格式
 
-    ```
-    {
-        "requestId":"A179AE8A-A7FE-4242-A830-641720CE2785"
-    }
-    ```
+``` {#json_return_success_demo}
+{
+	"requestId":"A179AE8A-A7FE-4242-A830-641720CE2785"
+}
+```
 
+## 错误码 { .section}
+
+访问[错误中心](https://error-center.aliyun.com/status/product/Uis)查看更多错误码。
 
