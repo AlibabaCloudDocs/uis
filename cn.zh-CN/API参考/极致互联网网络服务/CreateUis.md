@@ -2,9 +2,9 @@
 
 调用CreateUis接口创建一个Uis实例。实例创建后会指定隧道协议，并生成VPN数据库的管理口令。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Uis&api=CreateUis)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Uis&api=CreateUis&type=RPC&version=2018-08-21)
 
 ## 请求参数 {#parameters .section}
 
@@ -119,11 +119,10 @@ http(s)://uis.cn-hangzhou.aliyuncs.com/?Action=CreateUis
 
 ``` {#xml_return_success_demo}
 <CreateUisResponse>
-  <OrderId>2040684504905xx</OrderId>
-  <RequestId>5C23D304-F0F9-4581-88B0-6E2123B23AC1</RequestId>
-  <UisId>UIS-xxxe61q5i00921m3w****</UisId>
+      <OrderId>2040684504905xx</OrderId>
+	  <RequestId>5C23D304-F0F9-4581-88B0-6E2123B23AC1</RequestId>
+	  <UisId>UIS-xxxe61q5i00921m3w****</UisId>
 </CreateUisResponse>
-
 ```
 
 `JSON` 格式
@@ -140,7 +139,7 @@ http(s)://uis.cn-hangzhou.aliyuncs.com/?Action=CreateUis
 
 |HttpCode|错误码|错误信息|描述|
 |--------|---|----|--|
-|403|Forbbiden.SubUser|You are not authorized to operate on the specified resource because your account was created by another user.|由于账号是其他用户创建的，并未授权访问指定资源。|
+|403|Forbbiden.SubUser|You are not authorized to operate on the specified resource because your account was created by another user.|由于账号是其他用户创建的，并未授权访问指定资源|
 |403|Forbidden|The user is not authorized to operate on the specified resource.|用户并未授权操作指定资源。|
 
 访问[错误中心](https://error-center.aliyun.com/status/product/Uis)查看更多错误码。
