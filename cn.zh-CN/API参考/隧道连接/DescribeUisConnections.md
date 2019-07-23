@@ -2,9 +2,9 @@
 
 调用DescribeUisConnections接口查看已创建的隧道连接信息。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Uis&api=DescribeUisConnections)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Uis&api=DescribeUisConnections&type=RPC&version=2018-08-21)
 
 ## 请求参数 {#parameters .section}
 
@@ -107,24 +107,23 @@ http(s)://[uis.cn-hangzhou.aliyuncs.com/?Action=DescribeUisConnections
 
 ``` {#xml_return_success_demo}
 <DescribeUisConnectionsResponse>
-  <PageNumber>1</PageNumber>
-  <TotalCount>1</TotalCount>
-  <PageSize>10</PageSize>
-  <RequestId>485997B0-3EB4-40B7-82D8-4A404EBFDB20</RequestId>
-  <UisConnections>
-    <UisConnection>
-      <Name>test_conn</Name>
-      <UisConnectionId>UISCONN-xxxblu51boe75a1eb****</UisConnectionId>
-      <UisNodeId>UISNODE-xxxcp0zr5m2avmn2r****</UisNodeId>
-      <SslConfig>{\"cipher\":\"AES-128-CBC\",\"port\":1194,\"protocol\":\"udp\"}</SslConfig>
-      <State>running</State>
-      <UisProtocol>SSLVPN</UisProtocol>
-      <UisId>UIS-xxxbtfk761c670ok9****</UisId>
-      <GreConfig>null</GreConfig>
-    </UisConnection>
-  </UisConnections>
+      <PageNumber>1</PageNumber>
+      <TotalCount>1</TotalCount>
+      <PageSize>10</PageSize>
+      <RequestId>485997B0-3EB4-40B7-82D8-4A404EBFDB20</RequestId>
+      <UisConnections>
+            <UisConnection>
+                  <Name>test_conn</Name>
+                  <UisConnectionId>UISCONN-xxxblu51boe75a1eb****</UisConnectionId>
+                  <UisNodeId>UISNODE-xxxcp0zr5m2avmn2r****</UisNodeId>
+                  <SslConfig>{\"cipher\":\"AES-128-CBC\",\"port\":1194,\"protocol\":\"udp\"}</SslConfig>
+                  <State>running</State>
+                  <UisProtocol>SSLVPN</UisProtocol>
+                  <UisId>UIS-xxxbtfk761c670ok9****</UisId>
+                  <GreConfig>null</GreConfig>
+            </UisConnection>
+      </UisConnections>
 </DescribeUisConnectionsResponse>
-
 ```
 
 `JSON` 格式
