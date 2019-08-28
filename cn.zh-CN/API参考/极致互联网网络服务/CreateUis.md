@@ -16,9 +16,7 @@
 -   接入**IOT**类型，对应的UisProtocol为**GRE**。
 
  |
-|Action|String|是|CreateUis|要执行的操作。 取值：
-
- **CreateUis**。
+|Action|String|是|CreateUis|要执行的操作，取值：**CreateUis**。
 
  |
 |ServiceRegion|String|是|China-mainland|UIS实例服务的区域。
@@ -26,13 +24,13 @@
  取值：**中国大陆\(China-mainland\)**/**海外\(Overseas\)**/**全球\(Global\)**。
 
  |
-|AutoPay|Boolean|否|true|是否支持自动支付。默认值是**false**。
+|AutoPay|Boolean|否|true|是否支持自动支付，默认值是**false**。
 
  |
 |Bandwidth|Integer|否|10|指定UIS实例的带宽，单位为M。
 
  |
-|BandwidthType|String|否|BGP|带宽类型。取值：
+|BandwidthType|String|否|BGP|带宽类型，取值：
 
  -   **BGP**
 -   **ChinaTelecom**
@@ -44,9 +42,7 @@
 -   **ChinaMobile+CEN**
 
  |
-|ClientToken|String|否|d7d24a21-f4ba-4454-9173-b3828dae492b|客户端token，用于保证请求的幂等性。
-
- 由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个 ASCII 字符。
+|ClientToken|String|否|d7d24a21-f4ba-4454-9173-b3828dae492b|客户端token，用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大值不超过64个ASCII字符。
 
  |
 |ConnectionBandwidth|Integer|否|20|指定每个连接的带宽。
@@ -57,24 +53,24 @@
  |
 |Description|String|否|uis description info|实例的描述信息。
 
- 长度为 2-256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
+ 长度为2~256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
 
  |
 |Duration|Integer|否|1|预付费时，购买的周期数。
 
  |
-|InstanceChargeType|String|否|PREPAY|付费方式。取值：**后付费\(POSTPAY\)**/**预付费\(PREPAY\)**。
+|InstanceChargeType|String|否|PREPAY|付费方式，取值：**后付费\(POSTPAY\)**/**预付费\(PREPAY\)**。
 
  |
-|InternetChargeType|String|否|Connection|计费方式。取值：**连接\(Connection\)**/**带宽\(Bandwidth\)**。
+|InternetChargeType|String|否|Connection|计费方式，取值：**连接\(Connection\)**/**带宽\(Bandwidth\)**。
 
  |
 |Name|String|否|test\_uis\_name|实例的名称。
 
- 长度为 2-128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-）。但不能以`http://`或`https://`开头。
+ 长度为2~128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-），但不能以`http://`或`https://`开头。
 
  |
-|PricingCycle|String|否|Year|预付费购买的周期数类型。取值：**Month**/**Year**。
+|PricingCycle|String|否|Year|预付费购买的周期数类型，取值：**Month**/**Year**。
 
  |
 |RegionId|String|否|cn-hangzhou|实例的地域。
@@ -82,7 +78,7 @@
  **说明：** 目前仅支持cn-hangzhou。
 
  |
-|UisProtocol|String|否|GRE|用户的连接类型。取值：**SSL**/**SDK**/**GRE**。
+|UisProtocol|String|否|GRE|用户的连接类型，取值：**SSL**/**SDK**/**GRE**。
 
  |
 
